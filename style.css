@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header,
+footer {
+    padding: 0.5rem 2rem;
+    height: 5rem;
+    background-color: #ece5dd;
+}
+
+/* Regole di stile per l'intestazione */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.header-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.logo {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #333333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.header-center {
+    flex: 2;
+    text-align: left;
+}
+
+.header-center h3 {
+    font-size: 1rem;
+    color: #333333;
+    margin: 0;
+}
+
+.restaurant-name {
+    font-size: 2rem;
+    color: #333333;
+    margin: 0;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    font-size: 21px;
+    color: #666666;
+}
+
+.header-right i {
+    cursor: pointer;
+}
+
+/* Regole di stile della chat */
+
+#chat-box {
+    padding: 2rem;
+    background-image: url('../img/background.jpg');
+
+    /* scrollabile! */
+    overflow: auto;
+
+    /* prende tutto lo spazio disponibile, v. body.height */
+    flex-grow: 1;
+
+    /* Gestisco la chat con il gap di flex per evitare margin-bottom */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.chat-row {
+    display: flex;
+}
+
+.chat-message {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 10px #00000080;
+}
+
+.sent {
+    justify-content: flex-end;
+    padding-left: 1rem;
+}
+
+.received {
+    justify-content: flex-start;
+    padding-right: 1rem;
+}
+
+.sent .chat-message {
+    background-color: #d5f9ba;
+}
+
+.received .chat-message {
+    background-color: #ffffff;
+}
+
+time {
+    font-size: 0.7rem;
+    color: #aaaaaa;
+}
+
+/* Fondo pagina */
+
+footer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+input {
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.6);
+
+    &:focus {
+        background: white;
+    }
+}
+
+button {
+    font-size: 2rem;
+    color: #666666;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button:hover {
+    color: green;
+}
+
+/* fix per viewport assurde */
+
+@media screen and (max-width: 300px) {
+
+    header {
+        padding: 0.5rem;
+    }
+
+    #chat-box {
+        padding: 0.75rem;
+        gap: 0.75rem;
+    }
+
+    footer {
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+}
+
+
+@media screen and (max-width: 250px) {
+    .header-right {
+        display: none;
+    }
+}
